@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const cors = require('cors');
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -11,6 +13,8 @@ const usersRouter = require('./routes/users');
 const weatherRouter = require('./routes/weather');
 
 const app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
