@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
     return res.send(JSON.stringify({message: 'Error: You must provide Lat and Long'}))
   }
 
-  const apiUri = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${lat},${long}/?extend=hourly`;
+  const apiUri = `https://api.pirateweather.net/forecast/${process.env.WEATHER_API_KEY}/${lat},${long}?extend=hourly`;
   const weatherResponse = await fetch(apiUri);
   const weatherJson = await weatherResponse.json();
 
